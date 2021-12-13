@@ -1,0 +1,2 @@
+module PlotSlotsHelper
+end

@@ -1,0 +1,57 @@
+<%= form_with(model: flower_type, local: true) do |form| %>
+  <% if flower_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flower_type.errors.count, "error") %> prohibited this flower_type from being saved:</h2>
+
+      <ul>
+        <% flower_type.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :growth_duration_seconds %>
+    <%= form.number_field :growth_duration_seconds %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buy_price %>
+    <%= form.number_field :buy_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sell_price %>
+    <%= form.number_field :sell_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_water_interval %>
+    <%= form.number_field :max_water_interval %>
+  </div>
+
+  <div class="field">
+    <%= form.label :harvest_duration_seconds %>
+    <%= form.number_field :harvest_duration_seconds %>
+  </div>
+
+  <div class="field">
+    <%= form.label :graphic %>
+    <%= form.text_field :graphic %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

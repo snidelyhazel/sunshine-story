@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flower Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Growth duration seconds</th>
+      <th>Buy price</th>
+      <th>Sell price</th>
+      <th>Max water interval</th>
+      <th>Harvest duration seconds</th>
+      <th>Graphic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flower_types.each do |flower_type| %>
+      <tr>
+        <td><%= flower_type.name %></td>
+        <td><%= flower_type.color %></td>
+        <td><%= flower_type.growth_duration_seconds %></td>
+        <td><%= flower_type.buy_price %></td>
+        <td><%= flower_type.sell_price %></td>
+        <td><%= flower_type.max_water_interval %></td>
+        <td><%= flower_type.harvest_duration_seconds %></td>
+        <td><%= flower_type.graphic %></td>
+        <td><%= link_to 'Show', flower_type %></td>
+        <td><%= link_to 'Edit', edit_flower_type_path(flower_type) %></td>
+        <td><%= link_to 'Destroy', flower_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flower Type', new_flower_type_path %>

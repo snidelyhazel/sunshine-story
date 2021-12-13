@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_name: Ashley
+  sun_penny: 100
+  last_update: 2021-11-20 21:48:24
+  plot_size: 3
+
+#two:
+#  user_name: MyString
+#  sun_penny: 20
+#  last_update: 2021-11-20 21:48:24
+#  plot_size: 3

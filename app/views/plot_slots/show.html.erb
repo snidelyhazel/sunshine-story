@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User profile:</strong>
+  <%= @plot_slot.user_profile_id %>
+</p>
+
+<p>
+  <strong>X:</strong>
+  <%= @plot_slot.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @plot_slot.y %>
+</p>
+
+<p>
+  <strong>Flower type:</strong>
+  <%= @plot_slot.flower_type_id %>
+</p>
+
+<p>
+  <strong>When planted:</strong>
+  <%= @plot_slot.when_planted %>
+</p>
+
+<p>
+  <strong>When watered:</strong>
+  <%= @plot_slot.when_watered %>
+</p>
+
+<%= link_to 'Edit', edit_plot_slot_path(@plot_slot) %> |
+<%= link_to 'Back', plot_slots_path %>

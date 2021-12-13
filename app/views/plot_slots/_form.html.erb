@@ -1,0 +1,47 @@
+<%= form_with(model: plot_slot, local: true) do |form| %>
+  <% if plot_slot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plot_slot.errors.count, "error") %> prohibited this plot_slot from being saved:</h2>
+
+      <ul>
+        <% plot_slot.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_profile_id %>
+    <%= form.text_field :user_profile_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :x %>
+    <%= form.number_field :x %>
+  </div>
+
+  <div class="field">
+    <%= form.label :y %>
+    <%= form.number_field :y %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flower_type_id %>
+    <%= form.text_field :flower_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :when_planted %>
+    <%= form.datetime_select :when_planted %>
+  </div>
+
+  <div class="field">
+    <%= form.label :when_watered %>
+    <%= form.datetime_select :when_watered %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

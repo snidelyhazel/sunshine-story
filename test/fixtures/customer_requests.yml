@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_profile: one
+  flower_type: one
+  quantity: 1
+
+two:
+  user_profile: one
+  flower_type: two
+  quantity: 4
+
+three:
+  user_profile: one
+  flower_type: three
+  quantity: 2

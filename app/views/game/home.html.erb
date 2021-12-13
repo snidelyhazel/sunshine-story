@@ -1,0 +1,80 @@
+<h1 class="sunshine">Sunshine Story</h1>
+
+<div class="dashboard">
+
+  <div class="stats-panel">
+
+    <p>Hi there, <em><%= @user_profile.user_name %></em>! <a href="/">Not you? Logout.</a></p>
+
+    <!-- Sunpennies -->
+    <% if @user_profile.sun_penny == 1 %>
+    <p>You have <em><%= @user_profile.sun_penny %></em> sunpenny!</p>
+    <% else %>
+    <p>You have <em><%= @user_profile.sun_penny %></em> sunpennies!</p>
+    <% end %>
+
+    <!-- Inventory -->
+    <div>Here's what you've got in your <em>inventory</em>!</div>
+    <table class="inventory">
+      <thead>
+        <th>Name</th>
+        <th>Flowers</th>
+        <th>Seeds</th>
+        <th>Plant</th>
+      </thead>
+      <tbody>
+        <% @owned_flower_types.each do |flower_type| %>
+        <tr>
+          <td>
+            <%= flower_type.name %>
+          </td>
+          <td>
+            <%= flower_type.flower_quantity %>
+          </td>
+          <td>
+            <%= flower_type.seed_quantity %>
+          </td>
+          <td>
+            <% if flower_type.seed_quantity > 0 %>
+              <a href="plant/<%= flower_type.flower_type_id %>/">Plant</a>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <p><a href="shop">Go to Shop</a>!</p>
+
+    <% if @all_customer_requests.length > 0 %>
+      <p>You have a customer! <a href="requests">See requests</a>!
+    <% end %>
+
+  </div>
+
+  <div>
+
+    <!-- Garden Plot -->
+    <div class="plot-grid" style="grid-template-columns: repeat(<%= @user_profile.plot_size %>, 1fr);">
+      <% @all_plot_slots.each do |plot_slot| %>
+        <div>
+          <% if plot_slot.flower_type_id != nil %>
+
+            <% if DateTime.now.to_i - plot_slot.when_planted.to_i > plot_slot.growth_duration_seconds %>
+              <img class="flower-graphic" src="/flowers<%= plot_slot.graphic%>">
+              <%= form_tag "harvest" do %>
+                <%= hidden_field_tag :plot_slot_x_string, plot_slot.x %>
+                <%= hidden_field_tag :plot_slot_y_string, plot_slot.y %>
+                <%= submit_tag "Harvest!" %>
+              <% end %>
+            <% else %>
+              <img class="flower-graphic" src="/sprouts<%= plot_slot.graphic%>">
+            <% end %>
+
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

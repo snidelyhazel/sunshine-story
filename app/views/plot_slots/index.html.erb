@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plot Slots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User profile</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Flower type</th>
+      <th>When planted</th>
+      <th>When watered</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plot_slots.each do |plot_slot| %>
+      <tr>
+        <td><%= plot_slot.user_profile_id %></td>
+        <td><%= plot_slot.x %></td>
+        <td><%= plot_slot.y %></td>
+        <td><%= plot_slot.flower_type_id %></td>
+        <td><%= plot_slot.when_planted %></td>
+        <td><%= plot_slot.when_watered %></td>
+        <td><%= link_to 'Show', plot_slot %></td>
+        <td><%= link_to 'Edit', edit_plot_slot_path(plot_slot) %></td>
+        <td><%= link_to 'Destroy', plot_slot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plot Slot', new_plot_slot_path %>

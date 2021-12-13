@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User profile:</strong>
+  <%= @customer_request.user_profile_id %>
+</p>
+
+<p>
+  <strong>Flower type:</strong>
+  <%= @customer_request.flower_type_id %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @customer_request.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_customer_request_path(@customer_request) %> |
+<%= link_to 'Back', customer_requests_path %>

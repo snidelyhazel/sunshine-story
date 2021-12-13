@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Owned Seeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User profile</th>
+      <th>Flower type</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owned_seeds.each do |owned_seed| %>
+      <tr>
+        <td><%= owned_seed.user_profile_id %></td>
+        <td><%= owned_seed.flower_type_id %></td>
+        <td><%= owned_seed.quantity %></td>
+        <td><%= link_to 'Show', owned_seed %></td>
+        <td><%= link_to 'Edit', edit_owned_seed_path(owned_seed) %></td>
+        <td><%= link_to 'Destroy', owned_seed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Owned Seed', new_owned_seed_path %>

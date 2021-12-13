@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @flower_type.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @flower_type.color %>
+</p>
+
+<p>
+  <strong>Growth duration seconds:</strong>
+  <%= @flower_type.growth_duration_seconds %>
+</p>
+
+<p>
+  <strong>Buy price:</strong>
+  <%= @flower_type.buy_price %>
+</p>
+
+<p>
+  <strong>Sell price:</strong>
+  <%= @flower_type.sell_price %>
+</p>
+
+<p>
+  <strong>Max water interval:</strong>
+  <%= @flower_type.max_water_interval %>
+</p>
+
+<p>
+  <strong>Harvest duration seconds:</strong>
+  <%= @flower_type.harvest_duration_seconds %>
+</p>
+
+<p>
+  <strong>Graphic:</strong>
+  <%= @flower_type.graphic %>
+</p>
+
+<%= link_to 'Edit', edit_flower_type_path(@flower_type) %> |
+<%= link_to 'Back', flower_types_path %>

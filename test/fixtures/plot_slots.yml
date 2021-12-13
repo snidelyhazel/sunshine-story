@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_profile: one
+  x: 0
+  'y': 0
+  flower_type: one
+  when_planted: 2021-11-20 21:54:25
+  when_watered: 2021-11-20 21:54:25
+
+two:
+  user_profile: one
+  x: 0
+  'y': 1
+  flower_type: two
+  when_planted: 2021-11-20 21:54:25
+  when_watered: 2021-11-20 21:54:25
+
+three:
+  user_profile: one
+  x: 0
+  'y': 2
+  flower_type: three
+  when_planted: 2021-11-20 21:54:25
+  when_watered: 2021-11-20 21:54:25
+
+four:
+  user_profile: one
+  x: 2
+  'y': 0
+  flower_type: two
+  when_planted: 2021-11-20 21:54:25
+  when_watered: 2021-11-20 21:54:25

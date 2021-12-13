@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @user_profile.user_name %>
+</p>
+
+<p>
+  <strong>Sun penny:</strong>
+  <%= @user_profile.sun_penny %>
+</p>
+
+<p>
+  <strong>Last update:</strong>
+  <%= @user_profile.last_update %>
+</p>
+
+<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
+<%= link_to 'Back', user_profiles_path %>

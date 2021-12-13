@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Crocus
+  color: purple
+  growth_duration_seconds: 100
+  buy_price: 5
+  sell_price: 8
+  max_water_interval: 80
+  harvest_duration_seconds: 600
+  graphic: /crocus.png
+
+two:
+  name: Petunia
+  color: white
+  growth_duration_seconds: 60
+  buy_price: 1
+  sell_price: 3
+  max_water_interval: 40
+  harvest_duration_seconds: 600
+  graphic: /petunia.png
+
+three:
+  name: Tulip
+  color: red
+  growth_duration_seconds: 80
+  buy_price: 14
+  sell_price: 20
+  max_water_interval: 60
+  harvest_duration_seconds: 600
+  graphic: /tulip.png

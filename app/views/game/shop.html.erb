@@ -1,0 +1,60 @@
+<h1 class="sunshine">Sunshine Story</h1>
+
+<div class="dashboard">
+
+  <div class="stats-panel">
+    <p>Welcome to the shop, <em><%= @user_profile.user_name %></em>!</p>
+
+    <% if @user_profile.sun_penny == 1 %>
+    <p>You have <em><%= @user_profile.sun_penny %></em> sunpenny!</p>
+    <% else %>
+    <p>You have <em><%= @user_profile.sun_penny %></em> sunpennies!</p>
+    <% end %>
+    <p>What would you like to buy today?</p>
+
+    <p><a href=".">Return to Dashboard</a>.</p>
+  </div>
+
+  <div class="shop">
+    <table>
+      <thead>
+        <th>Flower Name</th>
+        <th>Seeds Owned</th>
+        <th>Unit Cost</th>
+        <th>Quantity</th>
+      </thead>
+      <tbody>
+        <% @owned_flower_types.each do |flower_type| %>
+        <tr>
+          <td>
+            <%= flower_type.name %>
+          </td>
+          <td>
+            <%= flower_type.seed_quantity %>
+          </td>
+          <td>
+            <%= flower_type.buy_price %>
+          </td>
+          <td>
+            <%= form_tag "purchase" do %>
+              <%= hidden_field_tag :flower_type_id_string, flower_type.flower_type_id %>
+              <%= number_field_tag :quantity_string, 1, min: 1 %>
+              <%= submit_tag "Purchase" %>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div>
+      <% if @user_profile.plot_size < 4 %>
+        <%= form_tag "expand" do %>
+          <%= submit_tag "Expand plot for 200 sunpennies?" %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

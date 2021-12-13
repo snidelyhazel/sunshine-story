@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User profile:</strong>
+  <%= @owned_flower.user_profile_id %>
+</p>
+
+<p>
+  <strong>Flower type:</strong>
+  <%= @owned_flower.flower_type_id %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @owned_flower.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_owned_flower_path(@owned_flower) %> |
+<%= link_to 'Back', owned_flowers_index_path %>
